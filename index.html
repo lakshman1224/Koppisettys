@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Koppisetty's Housewarming Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;700&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Ramaraja&family=Peddana&family=Noto+Serif+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6df;--card:#fffdf5;--ink:#3a1a12;--maroon:#7a0f1f;--maroon2:#a31528;--gold:#c9961f;--gold2:#f3d27a;--soft:#fbe9b7;--accent:#a31528;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241008;--card:#33170d;--ink:#fbe9c8;--soft:#4a2415;--accent:#f3d27a}}
+:root[data-theme="dark"]{--bg:#241008;--card:#33170d;--ink:#fbe9c8;--soft:#4a2415;--accent:#f3d27a}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb),Georgia,serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--fh),Georgia,serif;margin:0}
+.garland{height:34px;background:repeating-linear-gradient(90deg,#f59e0b 0 22px,#ef4444 22px 44px,#fde047 44px 66px,#fff 66px 88px,#15803d 88px 100px);border-bottom:4px solid var(--gold)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;gap:.4rem;justify-content:center;padding:.55rem 8rem .55rem .6rem;background:var(--card);border-bottom:2px solid var(--gold);overflow-x:auto}
+nav a{white-space:nowrap;padding:.4rem .9rem;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem;border:2px solid transparent;transition:.25s}
+nav a:hover{border-color:var(--gold)}
+nav a.on{background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:var(--gold2);border-color:var(--gold)}
+.toggle{position:fixed;right:.6rem;top:calc(.5rem + env(safe-area-inset-top,0px));z-index:30;width:2.4rem;height:2.4rem;border-radius:50%;border:2px solid var(--gold);background:var(--card);cursor:pointer}
+.page{display:none;animation:fade .6s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}}
+.hero{position:relative;text-align:center;padding:2.5rem 1rem 4.5rem;background:radial-gradient(circle at 50% 0,var(--soft),var(--bg) 70%)}
+.ganesh{font-size:4rem;display:inline-block;filter:drop-shadow(0 4px 8px rgba(201,150,31,.5));animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.blessing{font-style:italic;max-width:30rem;margin:.5rem auto;min-height:3.2em}
+.banner{display:inline-block;margin:1rem auto;padding:1rem 2rem;background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:var(--gold2);border:3px solid var(--gold);border-radius:18px;box-shadow:0 8px 24px rgba(122,15,31,.35)}
+.banner h1{font-size:clamp(1.6rem,6vw,3rem);line-height:1.15;text-shadow:0 2px 4px rgba(0,0,0,.4)}
+.script{font-family:var(--fs),cursive,serif;font-size:clamp(2.3rem,9vw,4.2rem);color:var(--accent);margin:.3rem 0;min-height:1.3em;text-align:center}
+.type::after{content:'|';animation:blink .8s steps(1) infinite;color:var(--gold)}
+.type.done::after{content:''}
+@keyframes blink{50%{opacity:0}}
+.divider{color:var(--gold);letter-spacing:.6em;margin:1rem 0}
+main{max-width:60rem;margin:-2.5rem auto 0;padding:0 1rem 3rem;position:relative}
+.wrap{max-width:60rem;margin:0 auto;padding:1.5rem 1rem 3rem}
+.card{background:var(--card);border:2px solid var(--gold);border-radius:20px;padding:1.5rem;text-align:center;box-shadow:0 10px 30px rgba(122,15,31,.15);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(122,15,31,.25)}
+.icon{width:64px;height:64px;margin:-3rem auto .6rem;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--maroon2));display:grid;place-items:center;font-size:1.9rem;border:3px solid var(--gold)}
+.grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.tile{display:block;text-decoration:none;color:inherit;margin-top:1.8rem}
+.tile h3{color:var(--accent)}
+.btn{display:inline-block;margin:.3rem;padding:.65rem 1.2rem;border-radius:999px;background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:var(--gold2);text-decoration:none;font:600 .95rem var(--fb),serif;border:2px solid var(--gold);cursor:pointer;transition:transform .2s}
+.btn:hover{transform:scale(1.06)}
+.btn.alt{background:transparent;color:var(--accent);border-color:var(--accent)}
+.sub{opacity:.8}
+.tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.8rem}
+.tabs button{padding:.6rem 1.1rem;border-radius:999px;border:2px solid var(--gold);background:var(--card);color:var(--ink);font:600 .95rem var(--fb),serif;cursor:pointer;transition:.25s}
+.tabs button.on{background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:var(--gold2)}
+.panel{display:none;animation:fade .5s}
+.panel.on{display:block}
+.panel h2{color:var(--accent);font-size:1.7rem}
+.when{font-size:1.15rem;font-weight:600;margin:.6rem 0 .2rem}
+.count{display:flex;justify-content:center;gap:.5rem;margin:1rem 0}
+.count div{background:var(--soft);border-radius:10px;padding:.4rem .5rem;min-width:3.3rem}
+.count b{display:block;font:700 1.3rem var(--fh),serif;color:var(--accent)}
+.count span{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em}
+.timeline{margin:2rem auto 0;max-width:30rem;border-left:3px solid var(--gold);padding-left:1.2rem}
+.timeline div{position:relative;margin-bottom:1rem;cursor:pointer}
+.timeline div::before{content:'';position:absolute;left:-1.7rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--maroon2);border:2px solid var(--gold)}
+.timeline b{color:var(--accent)}
+.loc{display:grid;gap:1.2rem;text-align:center;align-items:center}
+address{font-style:normal;font-size:1.15rem;margin:1rem 0}
+.map{font-size:4rem}
+@media (min-width:700px){.loc{grid-template-columns:1.4fr 1fr;text-align:left}.loc .map{text-align:center}}
+.quote{min-height:12rem;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.qtext{font:italic 1.5rem/1.5 var(--fh),serif}
+.qtext span{opacity:0;display:inline-block;animation:word .6s forwards}
+@keyframes word{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.qsrc{margin-top:1rem;color:var(--accent);font-weight:600}
+.dots{display:flex;gap:.4rem;justify-content:center;margin:1rem 0}
+.dots i{width:.7rem;height:.7rem;border-radius:50%;background:var(--soft);border:1px solid var(--gold);cursor:pointer}
+.dots i.on{background:var(--maroon2)}
+footer{text-align:center;padding:1.5rem 1rem 2.5rem;background:linear-gradient(var(--bg),var(--soft))}
+footer p{font:italic 1.25rem var(--fh),serif;color:var(--accent);margin:.3rem}
+
+/* ===== 3D DOOR INTRO ===== */
+#gate{position:fixed;inset:0;z-index:100;background:#1a0608;overflow:hidden;cursor:pointer;perspective:1300px;transition:opacity .9s .2s}
+#gate .room{position:absolute;inset:0;background:radial-gradient(circle at 50% 55%,#fff3c4 0,#ffd86b 28%,#f59e0b 60%,#7a3a05 100%);display:grid;place-items:center;text-align:center;transform:scale(.9);transition:transform 2.4s ease}
+#gate .room h2{font:400 clamp(2.2rem,9vw,4rem) var(--fs),cursive,serif;color:var(--maroon);margin:0}
+#gate .room p{margin:.3rem 0;color:#5a2a0a;font-weight:600}
+#gate .frame{position:absolute;inset:0;display:flex;transform-style:preserve-3d;transition:transform 2.6s cubic-bezier(.5,0,.3,1) .5s;transform-origin:50% 55%}
+.door{position:relative;flex:1;transition:transform 2s cubic-bezier(.55,.05,.25,1);backface-visibility:hidden;
+background:
+ repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 2px,transparent 2px 9px),
+ linear-gradient(90deg,#5b2a0e,#8a4a1b 45%,#6b3412);
+border:5px solid #c9961f;box-shadow:inset 0 0 40px rgba(0,0,0,.55),0 0 30px rgba(0,0,0,.6)}
+.door.l{transform-origin:0 50%}
+.door.r{transform-origin:100% 50%}
+.door .p{position:absolute;left:14%;right:14%;border:4px solid rgba(243,210,122,.65);border-radius:6px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(0,0,0,.25));box-shadow:inset 0 0 14px rgba(0,0,0,.5),0 0 0 3px rgba(0,0,0,.25)}
+.door .p:nth-child(1){top:7%;height:24%}
+.door .p:nth-child(2){top:36%;height:24%}
+.door .p:nth-child(3){top:65%;height:28%}
+.door .p::after{content:'❀';position:absolute;inset:0;display:grid;place-items:center;color:rgba(243,210,122,.6);font-size:2rem}
+.door .knob{position:absolute;top:50%;width:2.6rem;height:2.6rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#c9961f 55%,#7a5200);box-shadow:0 3px 8px #000;transform:translateY(-50%)}
+.door.l .knob{right:6%}.door.r .knob{left:6%}
+.toran{position:absolute;top:0;left:0;right:0;height:46px;z-index:3;background:repeating-linear-gradient(90deg,#f59e0b 0 22px,#ef4444 22px 44px,#fde047 44px 66px,#fff 66px 88px,#15803d 88px 100px);border-bottom:4px solid var(--gold);transition:opacity .6s .4s}
+.hint{position:absolute;bottom:calc(2rem + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:var(--gold2);font:700 1.2rem var(--fh),serif;text-shadow:0 2px 8px #000;z-index:4;animation:pulse 1.6s infinite;transition:opacity .4s}
+@keyframes pulse{50%{opacity:.45}}
+.bell{position:absolute;top:44px;font-size:2.2rem;z-index:3;transform-origin:top center;animation:swing 2s ease-in-out infinite}
+.bell.a{left:12%}.bell.b{right:12%;animation-delay:.7s}
+@keyframes swing{50%{transform:rotate(14deg)}0%,100%{transform:rotate(-14deg)}}
+#gate.open .door.l{transform:rotateY(-112deg)}
+#gate.open .door.r{transform:rotateY(112deg)}
+#gate.open .room{transform:scale(1.15)}
+#gate.open .frame{transform:scale(2.4)}
+#gate.open .hint,#gate.open .toran,#gate.open .bell{opacity:0}
+#gate.fade{opacity:0;pointer-events:none}
+#gate.gone{display:none}
+.petal{position:fixed;top:-2rem;z-index:5;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.qtext span{opacity:1}}
+
+/* ===== MANGO LEAF TORAN ===== */
+.mango{position:relative;height:92px;overflow:hidden;pointer-events:none;display:flex;justify-content:center;background:linear-gradient(var(--soft),transparent)}
+.mango::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(#8a5a1c,#5b3a0e);box-shadow:0 2px 4px rgba(0,0,0,.3);z-index:2}
+.ml{position:absolute;top:3px;transform-origin:50% 0;animation:sway 3.2s ease-in-out infinite}
+.ml svg{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+.mf{position:absolute;top:2px;font-size:1.3rem;transform-origin:50% 0;animation:sway 3.6s ease-in-out infinite;z-index:3}
+#gate .toran.mango{background:none;border:0;height:110px;z-index:3;overflow:visible}
+
+:root{--fh:'Cinzel','Playfair Display',Georgia,serif;--fs:'Great Vibes',cursive;--fb:'Cormorant Garamond',Georgia,serif}
+html[lang="te"]{--fh:'Ramaraja','Noto Serif Telugu',serif;--fs:'Peddana','Noto Serif Telugu',serif;--fb:'Noto Serif Telugu',serif}
+body{font-size:1.15rem}
+.banner h1{font-family:'Cinzel Decorative',var(--fh);font-weight:700}
+.qtext{font-family:var(--fb);font-weight:500;font-size:1.7rem}
+.toggle{z-index:150}
+#lang{right:3.3rem;width:auto;padding:0 .8rem;font:700 .9rem 'Noto Serif Telugu','Cormorant Garamond',serif;color:var(--ink)}
+html[lang="te"] body{font-size:1rem;line-height:1.85}
+html[lang="te"] .banner h1{font-family:var(--fh);font-weight:400;font-size:clamp(1.6rem,6.5vw,2.8rem);line-height:1.5}
+html[lang="te"] .script{font-size:clamp(2rem,8vw,3.4rem);line-height:1.4}
+html[lang="te"] .qtext{font-style:normal;font-size:1.25rem;line-height:1.9}
+html[lang="te"] nav a,html[lang="te"] .btn,html[lang="te"] .tabs button{line-height:1.5}
+
+/* ===== MOBILE ===== */
+html{-webkit-text-size-adjust:100%}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.btn,.tabs button{min-height:44px}
+@media (hover:none){.card:hover,.tile:hover,.btn:hover{transform:none;box-shadow:0 10px 30px rgba(122,15,31,.15)}}
+@media (max-width:699px){
+ body{padding-bottom:calc(4.4rem + env(safe-area-inset-bottom,0px));font-size:1.08rem}
+ html[lang="te"] body{font-size:.95rem}
+ nav{position:fixed;top:auto;bottom:0;left:0;right:0;z-index:60;justify-content:space-around;gap:0;overflow:visible;padding:.3rem .2rem calc(.3rem + env(safe-area-inset-bottom,0px));border-bottom:0;border-top:2px solid var(--gold);box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+ nav a{flex:1;min-width:0;text-align:center;white-space:normal;padding:.5rem .1rem;font-size:.74rem;line-height:1.25;border-radius:12px}
+ html[lang="te"] nav a{font-size:.68rem}
+ .toggle{width:2.5rem;height:2.5rem;background:var(--card);color:var(--ink)}
+ #lang{right:3.4rem;height:2.5rem;padding:0 .7rem;font-size:.82rem}
+ .mango{height:70px}
+ .hero{padding:1.6rem .9rem 3.6rem}
+ .ganesh{font-size:3rem}
+ .banner{padding:.8rem 1.1rem;border-radius:14px;max-width:100%}
+ .banner h1{font-size:clamp(1.25rem,6.2vw,1.9rem)}
+ html[lang="te"] .banner h1{font-size:clamp(1.3rem,6vw,1.9rem)}
+ .script{font-size:clamp(2rem,10vw,2.8rem)}
+ html[lang="te"] .script{font-size:clamp(1.7rem,8vw,2.4rem)}
+ .blessing{font-size:1rem;min-height:4.2em}
+ main{padding:0 .8rem 2rem;margin-top:-2.2rem}
+ .wrap{padding:1rem .8rem 2rem}
+ .grid{gap:1.1rem}
+ .card{padding:1.2rem 1rem;border-radius:16px}
+ .icon{width:56px;height:56px;margin-top:-2.6rem;font-size:1.6rem}
+ .panel h2{font-size:1.35rem}
+ .when{font-size:1.05rem}
+ .count{gap:.35rem}
+ .count div{min-width:2.9rem;padding:.35rem .3rem}
+ .count b{font-size:1.1rem}
+ .tabs{gap:.4rem;margin-bottom:2.4rem}
+ .tabs button{flex:1 1 28%;padding:.55rem .3rem;font-size:.82rem;line-height:1.3}
+ .timeline{max-width:100%}
+ .loc{gap:.5rem}
+ .loc .btn{display:flex;align-items:center;justify-content:center;width:100%;margin:.4rem 0}
+ .map{font-size:3rem;order:-1}
+ address{font-size:1.05rem}
+ .quote{min-height:10rem}
+ .qtext{font-size:1.35rem}
+ html[lang="te"] .qtext{font-size:1.1rem}
+ .dots i{width:.9rem;height:.9rem}
+ #prev,#next{min-width:44%}
+ footer{padding:1.2rem 1rem 1.5rem}
+ footer p{font-size:1.05rem}
+ /* doors */
+ #gate{height:100dvh}
+ #gate .frame{transition-duration:2.2s}
+ #gate.open .frame{transform:scale(1.8)}
+ .door{border-width:3px;will-change:transform}
+ .door .p{left:10%;right:10%;border-width:3px}
+ .door .p::after{font-size:1.3rem}
+ .door .knob{width:1.9rem;height:1.9rem}
+ #gate .toran.mango{height:80px}
+ .bell{font-size:1.6rem}
+ .hint{font-size:1rem;padding:0 1rem}
+ #gate .room h2{font-size:clamp(2rem,11vw,3rem)}
+ html[lang="te"] #gate .room h2{font-size:clamp(1.8rem,9vw,2.6rem)}
+ #gate .room p{padding:0 1rem;font-size:.95rem}
+}
+@media (max-width:360px){.banner h1{font-size:1.15rem}.tabs button{font-size:.76rem}}
+.toggle,#lang{color:var(--ink);background:var(--card);border-color:var(--gold)}
+.hosts{display:inline-block;margin:.6rem auto .2rem;padding:.8rem 1.6rem;border:2px solid var(--gold);border-radius:16px;background:var(--card);box-shadow:0 6px 18px rgba(122,15,31,.2);animation:fade 1.2s .8s both;max-width:100%}
+.hosts small{display:block;opacity:.8;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;margin-bottom:.2rem}
+.hosts b{display:block;font:700 1.2rem/1.5 var(--fh),serif;color:var(--accent)}
+html[lang="te"] .hosts small{text-transform:none;letter-spacing:0;font-size:.85rem}
+html[lang="te"] .hosts b{font-weight:400;font-size:1.15rem}
+@media (max-width:699px){.hosts{padding:.7rem 1.1rem}.hosts b{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="room"><div><div style="font-size:3rem">🪔 🕉️ 🪔</div><h2>Welcome</h2><p>to the Koppisetty Family's new home</p></div></div>
+  <div class="frame"><div class="door l"><div class="p"></div><div class="p"></div><div class="p"></div><div class="knob"></div></div><div class="door r"><div class="p"></div><div class="p"></div><div class="p"></div><div class="knob"></div></div></div>
+  <div class="toran mango" id="gtoran"></div><div class="bell a">🔔</div><div class="bell b">🔔</div>
+  <div class="hint">🙏 Tap the doors to enter</div>
+</div>
+<button class="toggle" id="lang" aria-label="Change language">తెలుగు</button>
+<button class="toggle" id="theme" aria-label="Toggle theme">🌓</button>
+<div class="garland"></div>
+<div class="mango" id="toran" aria-hidden="true"></div>
+<nav id="nav"><a href="#home">🏠 Home</a><a href="#events">📅 Events</a><a href="#location">📍 Location</a><a href="#blessings">🌼 Blessings</a></nav>
+
+<section class="page" id="home">
+  <header class="hero">
+    <div class="ganesh">🕉️</div>
+    <p class="blessing"><i id="t1" class="type"></i></p>
+    <div class="banner"><h1>KOPPISETTY'S<br>Housewarming Invitation</h1></div>
+    <div class="script type" id="t2"></div>
+    <div class="hosts"><small>Invited with love by</small><b>Mr. &amp; Mrs. Koppisetty<br>Yesu Babu &amp; Kanaka Durga</b></div>
+    <div class="divider">✿ ❀ ✿</div>
+  </header>
+  <main>
+    <div class="grid">
+      <a class="card tile" href="#events"><div class="icon">🏠</div><h3>Gruhapravesham</h3><small>Wed, 14-10-2026 · 8:31 PM onwards</small></a>
+      <a class="card tile" href="#events"><div class="icon">🪔</div><h3>Satyanarayana Vartam</h3><small>Thu, 15-10-2026 · 5:00 AM</small></a>
+      <a class="card tile" href="#location"><div class="icon">📍</div><h3>Location</h3><small>Sheelanagar, Gajuwaka</small></a>
+    </div>
+  </main>
+</section>
+
+<section class="page" id="events"><div class="wrap">
+  <h2 class="script">Our Celebrations</h2>
+  <div class="tabs" id="tabs"><button class="on" data-p="p1">🏠 Gruhapravesham</button><button data-p="p2">🪔 Vartam</button><button data-p="p3">🍛 Lunch</button></div>
+  <div class="card" style="max-width:36rem;margin:0 auto">
+    <div class="panel on" id="p1"><div class="icon">🏠</div><h2>Gruhapravesham</h2><p class="when">📅 Wednesday, 14-10-2026</p><p class="sub">at 8:31 PM onwards</p><div class="count" data-t="2026-10-14T20:31:00+05:30"></div>
+      <a class="btn alt" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gruhapravesham+-+Koppisetty&dates=20261014T150100Z/20261014T170100Z&location=Sri+Sai+Ramya+Residency,+Sheelanagar,+Gajuwaka">➕ Add to Calendar</a></div>
+    <div class="panel" id="p2"><div class="icon">🪔</div><h2>Satyanarayana Swamy Vartam</h2><p class="when">📅 Thursday, 15-10-2026</p><p class="sub">at 5:00 AM (in the morning)</p><div class="count" data-t="2026-10-15T05:00:00+05:30"></div>
+      <a class="btn alt" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Satyanarayana+Swamy+Vartam+-+Koppisetty&dates=20261014T233000Z/20261015T013000Z&location=Sri+Sai+Ramya+Residency,+Sheelanagar,+Gajuwaka">➕ Add to Calendar</a></div>
+    <div class="panel" id="p3"><div class="icon">🍛</div><h2>Lunch</h2><p class="when">📅 Thursday, 15-10-2026</p><p class="sub">at 1:00 PM · at our house</p><div class="count" data-t="2026-10-15T13:00:00+05:30"></div>
+      <a class="btn alt" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Housewarming+Lunch+-+Koppisetty&dates=20261015T073000Z/20261015T093000Z&location=Sri+Sai+Ramya+Residency,+Sheelanagar,+Gajuwaka">➕ Add to Calendar</a></div>
+  </div>
+  <div class="timeline" id="tl"><div data-p="p1"><b>14 Oct · 8:31 PM</b><br>Gruhapravesham</div><div data-p="p2"><b>15 Oct · 5:00 AM</b><br>Satyanarayana Swamy Vartam</div><div data-p="p3"><b>15 Oct · 1:00 PM</b><br>Lunch at our house</div></div>
+</div></section>
+
+<section class="page" id="location"><div class="wrap">
+  <h2 class="script">Find Us</h2>
+  <div class="card loc" style="margin-top:2rem">
+    <div><h2 style="color:var(--accent)">📍 Our New Home</h2>
+      <address>🏡 Flat no. 101,<br>Sri Sai Ramya Residency,<br>6A road, Venkateswara colony,<br>Sheelanagar, Gajuwaka</address>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sri+Sai+Ramya+Residency+Venkateswara+Colony+Sheelanagar+Gajuwaka">🗺️ Open in Maps</a>
+      <button class="btn alt" id="copy">📋 Copy Address</button><p class="sub" id="msg" aria-live="polite"></p></div>
+    <div class="map">🏡</div>
+  </div>
+</div></section>
+
+<section class="page" id="blessings"><div class="wrap">
+  <h2 class="script">Blessings &amp; Quotes</h2>
+  <div class="card quote" style="margin-top:1.5rem"><div class="qtext" id="qt"></div><div class="qsrc" id="qs"></div></div>
+  <div class="dots" id="dots"></div>
+  <div style="text-align:center"><button class="btn alt" id="prev">← Previous</button><button class="btn" id="next">Next →</button></div>
+</div></section>
+
+<footer><div class="divider">✿ ❀ ✿</div><p>Your presence makes our happiness complete…</p><p style="font-size:1rem;font-style:normal">🙏 With love, the Koppisetty Family</p></footer>
+<div class="garland"></div>
+
+<script>
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var gate=$('#gate'),opened=false;
+gate.onclick=function(){if(opened)return;opened=true;gate.classList.add('open');
+  setTimeout(function(){gate.classList.add('fade');startHome()},2300);
+  setTimeout(function(){gate.classList.add('gone')},3400)};
+
+var lang='en',typed=false,tok=0;
+var TX={en:{t1:'With the blessings of Almighty, we are delighted to invite you to our',t2:'Gruhapravesham Ceremony'},te:{t1:'ఆ భగవంతుని ఆశీస్సులతో, మా గృహప్రవేశ మహోత్సవానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము',t2:'గృహప్రవేశ మహోత్సవం'}};
+var LAB={en:[['Days',864e5],['Hrs',36e5],['Min',6e4],['Sec',1e3]],te:[['రోజులు',864e5],['గం',36e5],['నిమి',6e4],['సెక',1e3]]};
+function type(el,txt,sp,cb,my){el.textContent='';el.className=el.className.replace(' done','');var i=0;(function s(){if(my!==tok)return;if(i<=txt.length){el.textContent=txt.slice(0,i++);setTimeout(s,sp)}else{el.className+=' done';cb&&cb()}})()}
+function startHome(){if(typed)return;typed=true;var my=++tok;type($('#t1'),TX[lang].t1,32,function(){type($('#t2'),TX[lang].t2,70,null,my)},my)}
+
+var qi=0;
+function route(){var h=(location.hash||'#home').slice(1);if(!$('#'+h))h='home';
+  $$('.page').forEach(function(p){p.classList.toggle('on',p.id===h)});
+  $$('#nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h)});
+  if(h==='blessings')showQ(qi);window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);
+
+function pick(p){$$('#tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.p===p)});$$('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})}
+$$('#tabs button').forEach(function(b){b.onclick=function(){pick(b.dataset.p)}});
+$$('#tl div').forEach(function(d){d.onclick=function(){pick(d.dataset.p);window.scrollTo({top:0})}});
+
+var cds=$$('.count');
+function tick(){cds.forEach(function(el){var d=new Date(el.dataset.t)-Date.now();
+  if(d<=0){el.innerHTML='<div style="min-width:auto;padding:.5rem 1rem"><b style="font-size:1.1rem">'+(lang==='te'?'🎉 శుభ ముహూర్తం!':'🎉 It\'s time!')+'</b></div>';return}
+  var h='';LAB[lang].forEach(function(x){var v=Math.floor(d/x[1]);d-=v*x[1];h+='<div><b>'+String(v).padStart(2,'0')+'</b><span>'+x[0]+'</span></div>'});el.innerHTML=h})}
+tick();setInterval(tick,1000);
+
+var Q=[
+['Atithi Devo Bhava — the guest is equal to God.','అతిథి దేవో భవ — అతిథి దేవునితో సమానుడు.','Sanskrit proverb','సంస్కృత సూక్తి'],
+['A house is made of walls and beams; a home is built with love and dreams.','ఇల్లు గోడలు, దూలాలతో కట్టబడుతుంది; ఇంటిని ప్రేమ, కలలతో నిర్మిస్తారు.','Traditional saying','సాంప్రదాయ సూక్తి'],
+['Sarve bhavantu sukhinah — may all be happy.','సర్వే భవంతు సుఖినః — అందరూ సుఖంగా ఉండుదురు గాక.','Vedic prayer','వేద ప్రార్థన'],
+['Home is where the heart is, and today ours opens to you.','మనసు ఉన్న చోటే ఇల్లు; ఈ రోజు మా ఇల్లు మీ కోసం తలుపులు తెరిచింది.','Proverb, with love','ప్రేమతో'],
+['Where there is love, there is home; where there is home, there is blessing.','ప్రేమ ఉన్న చోట ఇల్లు; ఇల్లు ఉన్న చోట ఆశీర్వాదం.','Family wish','కుటుంబ ఆకాంక్ష'],
+['Vasudhaiva Kutumbakam — the whole world is one family.','వసుధైవ కుటుంబకం — ప్రపంచమంతా ఒకే కుటుంబం.','Maha Upanishad','మహా ఉపనిషత్తు'],
+['Om Sri Ganeshaya Namaha — may every beginning be blessed.','ఓం శ్రీ గణేశాయ నమః — ప్రతి ఆరంభం శుభప్రదమగుగాక.','Prayer','ప్రార్థన']];
+$('#dots').innerHTML=Q.map(function(_,i){return '<i data-i="'+i+'"></i>'}).join('');
+$$('#dots i').forEach(function(d){d.onclick=function(){showQ(+d.dataset.i)}});
+function showQ(i){qi=(i+Q.length)%Q.length;var t=lang==='te'?1:0;
+  $('#qt').innerHTML=Q[qi][t].split(' ').map(function(w,k){return '<span style="animation-delay:'+(k*0.12)+'s">'+w+'&nbsp;</span>'}).join('');
+  $('#qs').textContent='— '+Q[qi][t+2];$$('#dots i').forEach(function(d,k){d.classList.toggle('on',k===qi)})}
+$('#next').onclick=function(){showQ(qi+1)};$('#prev').onclick=function(){showQ(qi-1)};
+route();
+
+$('#copy').onclick=function(){var t="Flat no. 101, Sri Sai Ramya Residency, 6A road, Venkateswara colony, Sheelanagar, Gajuwaka",m=$('#msg');
+  try{navigator.clipboard.writeText(t).then(function(){m.textContent=(lang==='te'?'చిరునామా కాపీ అయింది ✓':'Address copied ✓')},function(){m.textContent=(lang==='te'?'దయచేసి మానవీయంగా కాపీ చేయండి':'Please copy manually')})}catch(e){m.textContent=(lang==='te'?'దయచేసి మానవీయంగా కాపీ చేయండి':'Please copy manually')}};
+
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var em=['🌼','🌸','🏵️','🌺'];
+  setInterval(function(){if(!opened)return;var s=document.createElement('span');s.className='petal';s.textContent=em[Math.floor(Math.random()*4)];
+    s.style.left=Math.random()*100+'vw';s.style.fontSize=(14+Math.random()*14)+'px';s.style.animationDuration=(6+Math.random()*6)+'s';
+    document.body.appendChild(s);setTimeout(function(){s.remove()},12000)},innerWidth<700?1800:1000)}
+else{gate.className='gone';startHome()}
+
+// Mango leaf toran
+var svgdef='<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#14692c"/><stop offset=".5" stop-color="#37a24a"/><stop offset="1" stop-color="#1b7d34"/></linearGradient></defs></svg>';
+document.body.insertAdjacentHTML('afterbegin',svgdef);
+function leaf(w,h){return '<svg viewBox="0 0 20 60" preserveAspectRatio="none"><path d="M10 0C21 14 21 46 10 60C-1 46 -1 14 10 0Z" fill="url(#lg)"/><path d="M10 3V57" stroke="#b9ec9c" stroke-width="1" opacity=".8"/></svg>'}
+function fillToran(el){var W=window.innerWidth,step=W<700?20:24,n=Math.ceil(W/step)+1,h='';
+  for(var i=0;i<n;i++){var x=i*step,swag=Math.abs(Math.sin(i/n*Math.PI*4)),len=Math.round((34+swag*30)*(W<700?.7:1)),w=W<700?13:16;
+    h+='<div class="ml" style="left:'+x+'px;width:'+w+'px;height:'+len+'px;animation-delay:'+((i%9)*0.25)+'s">'+leaf()+'</div>';
+    if(i%6===3)h+='<div class="mf" style="left:'+(x-2)+'px;animation-delay:'+((i%5)*0.3)+'s">🌼</div>'}
+  el.innerHTML=h}
+function buildTorans(){fillToran($('#toran'));fillToran($('#gtoran'))}
+buildTorans();var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(buildTorans,200)});
+
+// ===== Language =====
+var T=[
+['#gate .hint','🙏 Tap the doors to enter','🙏 లోపలికి రావడానికి తలుపులను తాకండి'],
+['#gate .room h2','Welcome','స్వాగతం'],
+['#gate .room p',"to the Koppisetty Family's new home",'కొప్పిశెట్టి కుటుంబ నూతన గృహానికి'],
+['#nav a:nth-child(1)','🏠 Home','🏠 హోమ్'],['#nav a:nth-child(2)','📅 Events','📅 కార్యక్రమాలు'],['#nav a:nth-child(3)','📍 Location','📍 చిరునామా'],['#nav a:nth-child(4)','🌼 Blessings','🌼 ఆశీస్సులు'],
+['.hosts small','Invited with love by','ప్రేమతో ఆహ్వానిస్తున్నవారు'],
+['.hosts b','Mr. &amp; Mrs. Koppisetty<br>Yesu Baby &amp; Kanaka Durga','శ్రీ కొప్పిశెట్టి యేసు బేబీ<br>&amp; శ్రీమతి కనక దుర్గ'],
+['.banner h1',"KOPPISETTY'S<br>Housewarming Invitation",'కొప్పిశెట్టి వారి<br>గృహప్రవేశ ఆహ్వానం'],
+['.grid .tile:nth-child(1) h3','Gruhapravesham','గృహప్రవేశం'],['.grid .tile:nth-child(1) small','Wed, 14-10-2026 · 8:31 PM onwards','బుధ, 14-10-2026 · రాత్రి 8:31 నుండి'],
+['.grid .tile:nth-child(2) h3','Satyanarayana Vartam','సత్యనారాయణ వ్రతం'],['.grid .tile:nth-child(2) small','Thu, 15-10-2026 · 5:00 AM','గురు, 15-10-2026 · ఉదయం 5:00'],
+['.grid .tile:nth-child(3) h3','Location','చిరునామా'],['.grid .tile:nth-child(3) small','Sheelanagar, Gajuwaka','షీలానగర్, గాజువాక'],
+['#events h2.script','Our Celebrations','మా వేడుకలు'],
+['#tabs button:nth-child(1)','🏠 Gruhapravesham','🏠 గృహప్రవేశం'],['#tabs button:nth-child(2)','🪔 Vartam','🪔 వ్రతం'],['#tabs button:nth-child(3)','🍛 Lunch','🍛 భోజనం'],
+['#p1 h2','Gruhapravesham','గృహప్రవేశం'],['#p1 .when','📅 Wednesday, 14-10-2026','📅 బుధవారం, 14-10-2026'],['#p1 .sub','at 8:31 PM onwards','రాత్రి 8:31 నుండి'],
+['#p2 h2','Satyanarayana Swamy Vartam','శ్రీ సత్యనారాయణ స్వామి వ్రతం'],['#p2 .when','📅 Thursday, 15-10-2026','📅 గురువారం, 15-10-2026'],['#p2 .sub','at 5:00 AM (in the morning)','ఉదయం 5:00 గంటలకు'],
+['#p3 h2','Lunch','భోజనం'],['#p3 .when','📅 Thursday, 15-10-2026','📅 గురువారం, 15-10-2026'],['#p3 .sub','at 1:00 PM · at our house','మధ్యాహ్నం 1:00 గంటలకు · మా ఇంట్లో'],
+['#p1 .btn','➕ Add to Calendar','➕ క్యాలెండర్‌లో చేర్చండి'],['#p2 .btn','➕ Add to Calendar','➕ క్యాలెండర్‌లో చేర్చండి'],['#p3 .btn','➕ Add to Calendar','➕ క్యాలెండర్‌లో చేర్చండి'],
+['#tl div:nth-child(1)','<b>14 Oct · 8:31 PM</b><br>Gruhapravesham','<b>14 అక్టోబర్ · రాత్రి 8:31</b><br>గృహప్రవేశం'],
+['#tl div:nth-child(2)','<b>15 Oct · 5:00 AM</b><br>Satyanarayana Swamy Vartam','<b>15 అక్టోబర్ · ఉదయం 5:00</b><br>శ్రీ సత్యనారాయణ స్వామి వ్రతం'],
+['#tl div:nth-child(3)','<b>15 Oct · 1:00 PM</b><br>Lunch at our house','<b>15 అక్టోబర్ · మధ్యాహ్నం 1:00</b><br>మా ఇంట్లో భోజనం'],
+['#location h2.script','Find Us','మమ్మల్ని చేరుకోండి'],['.loc > div:first-child h2','📍 Our New Home','📍 మా నూతన గృహం'],
+['#location address','🏡 Flat no. 101,<br>Sri Sai Ramya Residency,<br>6A road, Venkateswara colony,<br>Sheelanagar, Gajuwaka','🏡 ఫ్లాట్ నెం. 101,<br>శ్రీ సాయి రమ్య రెసిడెన్సీ,<br>6A రోడ్, వేంకటేశ్వర కాలనీ,<br>షీలానగర్, గాజువాక'],
+['#location a.btn','🗺️ Open in Maps','🗺️ మ్యాప్‌లో తెరవండి'],['#copy','📋 Copy Address','📋 చిరునామా కాపీ చేయండి'],
+['#blessings h2.script','Blessings &amp; Quotes','ఆశీస్సులు &amp; సూక్తులు'],['#prev','← Previous','← వెనుకకు'],['#next','Next →','తరువాత →'],
+['footer p:nth-of-type(1)','Your presence makes our happiness complete…','మీ రాకతో మా ఆనందం సంపూర్ణమవుతుంది…'],
+['footer p:nth-of-type(2)','🙏 With love, the Koppisetty Family','🙏 ప్రేమతో, కొప్పిశెట్టి కుటుంబం']];
+function setLang(l){lang=l;var te=l==='te';document.documentElement.lang=l;
+  T.forEach(function(r){var e=$(r[0]);if(e)e.innerHTML=te?r[2]:r[1]});
+  if(typed){tok++;$('#t1').textContent=TX[l].t1;$('#t2').textContent=TX[l].t2;$('#t1').className='type done';$('#t2').className='script type done'}
+  $('#lang').textContent=te?'English':'తెలుగు';
+  document.title=te?'కొప్పిశెట్టి వారి గృహప్రవేశ ఆహ్వానం':"Koppisetty's Housewarming Invitation";
+  showQ(qi);tick();$('#msg').textContent='';
+  try{localStorage.setItem('hw-lang',l)}catch(e){}}
+$('#lang').onclick=function(){setLang(lang==='te'?'en':'te')};
+var sl='en';try{sl=localStorage.getItem('hw-lang')||'en'}catch(e){}
+if(sl==='te')setLang('te');
+
+// Swipe between pages on phones
+var order=['home','events','location','blessings'],sx=0,sy=0;
+document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+document.addEventListener('touchend',function(e){if(innerWidth>=700)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)<90||Math.abs(dy)>45)return;var n=order.indexOf((location.hash||'#home').slice(1))+(dx<0?1:-1);if(n>=0&&n<order.length)location.hash='#'+order[n]},{passive:true});
+
+$('#theme').onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark'};
+</script>
+</body>
+</html>
